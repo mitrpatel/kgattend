@@ -59,7 +59,7 @@
 
     function loadTasks() {
         var taskList = document.getElementById("taskList");
-        taskList.innerHTML = ''; // Clear the current list
+        // taskList.innerHTML = ''; // Clear the current list
 
         var tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
         
@@ -107,7 +107,7 @@
 
         if (index > -1) {
             tasks.splice(index, 1);
-            localStorage.setItem("tasks", JSON.stringify(tasks));
+            localStorage.setItem('tasks', JSON.stringify(tasks), '/');
             loadTasks(); // Reload the tasks
         }
     }
